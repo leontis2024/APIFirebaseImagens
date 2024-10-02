@@ -5,7 +5,7 @@ FROM openjdk:17-jdk-slim
 WORKDIR /app
 
 # Copia o JAR construído da fase anterior para o diretório de trabalho
-COPY --from=Build /app/target/*.jar app.jar
+COPY --from=build /app/target/*.jar app.jar
 
 # Copia o arquivo de credenciais do Firebase para o diretório de recursos da aplicação no contêiner
 COPY src/main/resources/leontisfotos-firebase-adminsdk-3nepr-a0c5dd1819.json /app/
