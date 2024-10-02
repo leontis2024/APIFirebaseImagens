@@ -24,7 +24,7 @@ WORKDIR /app
 COPY --from=Build /app/target/*.jar app.jar
 
 # Copia o arquivo de credenciais do Firebase para o diretório de recursos da aplicação no contêiner
-COPY src/main/resources/leontisfotos-firebase-adminsdk-3nepr-4b41f628f0.json /app/
+COPY src/main/resources/leontisfotos-firebase-adminsdk-3nepr-a0c5dd1819.json /app/
 
 # Expõe a porta em que a aplicação será executada
 EXPOSE 8080
