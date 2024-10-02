@@ -20,8 +20,6 @@ WORKDIR /app
 # Copia o JAR construído da fase anterior para o diretório de trabalho
 COPY --from=Build /app/target/*.jar app.jar
 
-COPY src/main/resources/leontisfotos-firebase-adminsdk-3nepr-a0c5dd1819.json /app/
-
 # Expõe a porta em que a aplicação será executada
 EXPOSE 8080
 
