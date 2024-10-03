@@ -23,7 +23,7 @@ public class FirebaseStorageService {
         String folderName = nomeTabela+"/";
         BlobId blobId = BlobId.of("leontisfotos.appspot.com", folderName+fileName); // Replace with your bucker name
         BlobInfo blobInfo = BlobInfo.newBuilder(blobId).setContentType("image/"+fileName.substring(fileName.lastIndexOf(".") +1)).build();
-        InputStream inputStream = FirebaseStorageService.class.getClassLoader().getResourceAsStream("leontisfotos-firebase-adminsdk-3nepr-87cbb23894.json"); // change the file name with your one
+        InputStream inputStream = FirebaseStorageService.class.getClassLoader().getResourceAsStream("leontisfotos-firebase-adminsdk-3nepr-f16bfc30fb.json"); // change the file name with your one
         Credentials credentials = GoogleCredentials.fromStream(inputStream);
         Storage storage = StorageOptions.newBuilder().setCredentials(credentials).build().getService();
         storage.create(blobInfo, Files.readAllBytes(file.toPath()));
