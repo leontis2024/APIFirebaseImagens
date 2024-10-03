@@ -15,7 +15,6 @@ A *API REST* desenvolvida com *Spring Boot* permite a comunicação entre a inte
 ## Tecnologias Utilizadas
 - *Spring Boot*: Framework principal para o desenvolvimento da API.
 - *Postgres Firebasde*: Banco de dados usado para o armazenamento de dados.
-- *Swagger*: Ferramenta para documentação interativa da API.
 
 ### Passos do projeto:
 - [x] Criação da API de armazenamento de imagens
