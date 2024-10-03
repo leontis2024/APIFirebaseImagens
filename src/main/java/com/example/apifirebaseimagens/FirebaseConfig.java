@@ -15,7 +15,7 @@ public class FirebaseConfig {
     public FirebaseApp initializeFirebase() throws IOException {
         FileInputStream serviceAccount =
 //                src/main/resources/leontisfotos-firebase-adminsdk-3nepr-4b41f628f0.json
-                new FileInputStream("GOOGLE_APPLICATION_CREDENTIALS");
+                new FileInputStream(System.getenv("GOOGLE_APPLICATION_CREDENTIALS"));
 
         FirebaseOptions options = new FirebaseOptions.Builder()
                 .setCredentials(GoogleCredentials.fromStream(serviceAccount))
