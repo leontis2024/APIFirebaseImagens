@@ -6,6 +6,7 @@ import com.google.firebase.FirebaseOptions;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
@@ -17,7 +18,12 @@ public class FirebaseConfig {
 //                src/main/resources/leontisfotos-firebase-adminsdk-3nepr-4b41f628f0.json
                 new FileInputStream(System.getenv("GOOGLE_APPLICATION_CREDENTIALS"));
         System.out.println("Caminho das credenciais: " + System.getenv("GOOGLE_APPLICATION_CREDENTIALS"));
-
+        File file = new File(System.getenv("GOOGLE_APPLICATION_CREDENTIALS"));
+        if (file.exists()) {
+            System.out.println("Arquivo de credenciais encontrado: " + file.getAbsolutePath());
+        } else {
+            System.out.println("Arquivo de credenciais não encontrado.");
+        }
 
         FirebaseOptions options = new FirebaseOptions.Builder()
                 .setCredentials(GoogleCredentials.fromStream(serviceAccount))
