@@ -16,6 +16,8 @@ public class FirebaseConfig {
         FileInputStream serviceAccount =
 //                src/main/resources/leontisfotos-firebase-adminsdk-3nepr-4b41f628f0.json
                 new FileInputStream(System.getenv("GOOGLE_APPLICATION_CREDENTIALS"));
+        System.out.println("Caminho das credenciais: " + System.getenv("GOOGLE_APPLICATION_CREDENTIALS"));
+
 
         FirebaseOptions options = new FirebaseOptions.Builder()
                 .setCredentials(GoogleCredentials.fromStream(serviceAccount))
